@@ -2,20 +2,39 @@
 Oblig Oppgave 2
  */
 
-public class oppg2 {
-    public static void main(String[] args) {
-        
-        // Definitions
-        double hour = 1.0; // One Hour
-        double minutes = 1.0; // Minutes
-        double seconds = 1.0; // Seconds
+import java.util.Scanner; // import the Scanner class 
 
-        // Math
-        double total = hour * minutes + seconds;
+class oppg2 {
+  public static void main(String[] args) {
+    Scanner myObj = new Scanner(System.in);
+    String timerLest;
+    String minuttLest;
+    String sekundLest;
+    
+    // Legg til hvor mange timer
+    System.out.println("Hvor mange timer?"); 
+    timerLest = myObj.nextLine();   
+       
+    // Legg til hvor mange minutt
+    System.out.println("Hvor mange minutt?"); 
+    minuttLest = myObj.nextLine();
 
+    // Legg til hvor mange sekund
+    System.out.println("Hvor mange sekund?"); 
+    sekundLest = myObj.nextLine();
 
-        // Print
-        System.out.println(total);
+    // Endre fra String til Double
+    double timer= Double.parseDouble(timerLest);
+    double minutt= Double.parseDouble(minuttLest);
+    double sekund= Double.parseDouble(sekundLest);
 
-    }
+    // Matte
+    double totalTimer = timer * 3600;
+    double totalMinutt = minutt * 60;
+    double totalSek = totalTimer + totalMinutt + sekund;
+
+    // Print
+    System.out.println("Totalt er det: " + totalSek + " sekunder");  
+          
+  }
 }
