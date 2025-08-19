@@ -16,9 +16,10 @@ public class oppg3 {
         // Matte
         int timer = totaltSekunder / 3600; // Finner timer
         int restEtterTimer = totaltSekunder % 3600; // Resten etter timer
-        int minutter = restEtterTimer / 60;        // Finn minutter
+        int minutter = restEtterTimer / 60;        // Finner minutter
         int sekunder = restEtterTimer % 60;        // Resten etter minutter
 
+        // Print
         System.out.println(totaltSekunder + " sekunder = " 
             + timer + " t " 
             + minutter + " m " 
