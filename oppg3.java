@@ -25,6 +25,5 @@ public class oppg3 {
             + minutter + " m " 
             + sekunder + " s");
 
-
     }
 }
