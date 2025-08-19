@@ -1,5 +1,6 @@
 /*
-Oblig Oppgave 2
+Øving 1
+Oppgave 2
  */
 
 import java.util.Scanner; // import the Scanner class 

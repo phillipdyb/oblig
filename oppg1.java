@@ -1,5 +1,6 @@
 /*
-Oblig Oppgave 1
+Øving 1
+Oppgave 1
  */
 
 public class oppg1 {
