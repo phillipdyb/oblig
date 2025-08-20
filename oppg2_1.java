@@ -14,12 +14,15 @@ public class oppg2_1 {
         int year = myObj.nextInt();
 
         // Matte
-        int leapYear = year / 4; // Delelig på 4
-        int restAfterYear = year % 4; // Resten etter timer
+        int leapCenturies = year / 400; // Delelig på 400
+        int restAfterCenturies = year % 400; // Resten etter skuddårhundre
+        int leapYears = restAfterCenturies / 4; // Finner resten av skuddårene
+        int restAfterLeapYears = restAfterCenturies % 4; // Resten etter skuddår
 
         // Print
-        System.out.println(leapYear + " antall skuddår, " 
-            + restAfterYear + " rest år.");
+        System.out.println(leapCenturies + " antall skuddårhundre, " 
+            + "plus " + leapYears + " antall skuddår. " 
+            + restAfterLeapYears + " rest.");
 
     }
 }
