@@ -35,7 +35,9 @@ class oppg1_2 {
     double totalSek = totalTimer + totalMinutt + sekund;
 
     // Print
-    System.out.println("Totalt er det: " + totalSek + " sekunder");  
+    System.out.println("Totalt er det: " + totalSek + " sekunder");
+    
+    myObj.close();
           
   }
 }

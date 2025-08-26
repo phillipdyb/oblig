@@ -24,5 +24,6 @@ public class oppg2_1 {
             + "plus " + leapYears + " antall skuddår. " 
             + restAfterLeapYears + " rest.");
 
+        myObj.close();
     }
 }

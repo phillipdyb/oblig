@@ -25,5 +25,7 @@ public class oppg1_3 {
             + minutter + " m " 
             + sekunder + " s");
 
+        myObj.close();
+
     }
 }

@@ -7,16 +7,20 @@ public class oppg2_2 {
     public static void main(String[] args) {
         
         // Definisjoner
-        double kjottdeig1 = 35.90;
-        double kjottdeig2 = 39.50;
-        double gram1 = 450;
-        double gram2 = 500;
+        double kjottdeigA = 35.90;
+        double kjottdeigB = 39.50;
+        double gramA = 450;
+        double gramB = 500;
 
         // Pris per gram for kjøttdeig
-        double pris1 = gram1 / kjottdeig1;
-        double pris2 = gram2 / kjottdeig2;
+        double prisA = gramA / kjottdeigA;
+        double prisB = gramB / kjottdeigB;
 
-        System.out.println(pris1 + "og " + pris2);
+        // True/False billigest
+        boolean billigst;
+        billigst = prisA < prisB;
+
+        System.out.println("Er merke A billigere enn merke B? " + billigst);
 
     }
 }
