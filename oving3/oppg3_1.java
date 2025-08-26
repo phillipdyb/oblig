@@ -10,7 +10,7 @@ public class oppg3_1 {
         Scanner scanner = new Scanner(System.in);
 
         // Spør brukeren hvilken tabell de vil ha
-        System.out.print("Hvilken tabell? (13, 14, or 15): ");
+        System.out.print("Hvilken tabell? (13, 14, eller 15): ");
         int number = scanner.nextInt();
 
         // Se om det er 13, 14, 15 eller ingen.
@@ -21,7 +21,7 @@ public class oppg3_1 {
             }
         }
         else
-            System.out.println("Du kan kun velge 13, 14, or 15.");
+            System.out.println("Du kan kun velge 13, 14, eller 15.");
 
         scanner.close();
     }

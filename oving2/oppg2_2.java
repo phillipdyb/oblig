@@ -18,7 +18,7 @@ public class oppg2_2 {
 
         // True/False billigest
         boolean billigst;
-        billigst = prisA < prisB;
+        billigst = prisA > prisB;
 
         System.out.println("Er merke A billigere enn merke B? " + billigst);
 
