@@ -16,18 +16,21 @@ public class oppg2_1 {
         scanner.close();
 
         // Sjekk og skriv ut resultatet
-        boolean erSkuddAr = erSkuddAr(number);
-        System.out.println("Er " + number + " et skuddår? " + erSkuddAr);
+        String melding = erSkuddAr(number);
+        System.out.println(melding);
     }
 
     // Egen metode for å sjekke om årstallet er et skuddår
-    public static boolean erSkuddAr(int number) {
+    public static String erSkuddAr(int number) {
         if (number % 400 == 0) {
-            return true;
+            return number + " er et skuddår!";
+        }
+        else if (number % 100 == 0) {
+            return number + " er ikke et skuddår.";
         }
         else if (number % 4 == 0) {
-            return true;
+            return number + " er et skuddår!";
         }
-        return false;
+        return number + " er ikke et skuddår.";
     }
 }
