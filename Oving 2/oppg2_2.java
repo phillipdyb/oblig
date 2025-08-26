@@ -1,5 +1,6 @@
 /*
-Kommentar med informasjon
+Øving 2
+Oppgave 2
  */
 
 public class oppg2_2 {
