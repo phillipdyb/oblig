@@ -1,29 +1,33 @@
 /*
 Øving 2
 Oppgave 1
- */
+*/
 
 import java.util.Scanner;
 
 public class oppg2_1 {
+
     public static void main(String[] args) {
-        Scanner myObj = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        // Input av årstall (antall år fra år 0)
-        System.out.println("Årstall??"); 
-        int year = myObj.nextInt();
+        // Spør brukeren hvilket år som skal sjekkes
+        System.out.print("Hvilket år vil du sjekke om det er skuddår?: ");
+        int number = scanner.nextInt();
+        scanner.close();
 
-        // Matte
-        int leapCenturies = year / 400; // Delelig på 400
-        int restAfterCenturies = year % 400; // Resten etter skuddårhundre
-        int leapYears = restAfterCenturies / 4; // Finner resten av skuddårene
-        int restAfterLeapYears = restAfterCenturies % 4; // Resten etter skuddår
+        // Sjekk og skriv ut resultatet
+        boolean erSkuddAr = erSkuddAr(number);
+        System.out.println("Er " + number + " et skuddår? " + erSkuddAr);
+    }
 
-        // Print
-        System.out.println(leapCenturies + " antall skuddårhundre, " 
-            + "plus " + leapYears + " antall skuddår. " 
-            + restAfterLeapYears + " rest.");
-
-        myObj.close();
+    // Egen metode for å sjekke om årstallet er et skuddår
+    public static boolean erSkuddAr(int number) {
+        if (number % 400 == 0) {
+            return true;
+        }
+        else if (number % 4 == 0) {
+            return true;
+        }
+        return false;
     }
 }
