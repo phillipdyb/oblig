@@ -123,5 +123,7 @@ public class leapYearDiagram extends JPanel {
         frame.setSize(500, 550);
         frame.add(new leapYearDiagram(år));
         frame.setVisible(true);
+    
+        scanner.close();
     }
 }
