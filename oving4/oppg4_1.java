@@ -1,3 +1,8 @@
+/*
+Øving 4
+Oppgave 1
+*/
+
 import java.util.Scanner;
 
 // Klassen Valuta
