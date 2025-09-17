@@ -10,3 +10,5 @@ public class oppg5_1 {
 
     }
 }
+
+// Lag en klasse for å regne brøk, bruk get-metoder, IKKE set-metoder.
