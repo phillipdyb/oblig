@@ -1,0 +1,37 @@
+/*
+Øving 3
+Oppgave 2
+
+Primtall?
+
+ */
+
+import java.util.Scanner;
+
+public class oppg3_2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Spør brukeren hvilken tabell de vil ha
+        System.out.print("Hvilket tall vil du sjekke om det er primtall?: ");
+        int number = scanner.nextInt();
+        scanner.close();
+    
+
+        // Matte
+        public static boolean erPrimtall(int number) {
+            if (number <= 1) 
+                return false;
+            else
+                for (int i = 2; i <= Math.sqrt(number); i++)
+                    if (number % i == 0)
+                        return false;
+            return true;
+
+        boolean erPrimtall = true;
+
+        System.out.println("Er " + number + " et primtall? " + erPrimtall);
+        
+        }
+    }
+}
