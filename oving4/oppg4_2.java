@@ -8,8 +8,6 @@ import java.util.Random;
 public class oppg4_2 {
     public static void main(String[] args) {
 
-        int maxPoints = 100;
-
         player player1 = new player("Spiller 1");
         player player2 = new player("Spiller 2");
 
