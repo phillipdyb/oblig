@@ -8,16 +8,20 @@ import java.util.Random;
 public class Oppg5_2 {
     public static void main(String[] args) {
 
+        // Klasse random
         class MinRandom {
             Random random = new java.util.Random();
 
+            // Konstruktør uten funksjon
             public MinRandom() {
             }
 
+            // Funksjon random heltall
             public int nesteHeltall(int nedre, int ovre) {
                 return random.nextInt(ovre - nedre) + nedre;
             }
 
+            // Funksjon random desimaltall
             public double nesteDesimaltall(double nedre, double ovre) {
                 return random.nextDouble() * (ovre - nedre) + nedre;
             }
@@ -25,6 +29,7 @@ public class Oppg5_2 {
 
         MinRandom tilfeldig = new MinRandom();
 
+        // Print
         System.out.println("Random tall = " + tilfeldig.nesteHeltall(1, 4));
         System.out.println("Random tall = " + tilfeldig.nesteDesimaltall(1, 4));
 
