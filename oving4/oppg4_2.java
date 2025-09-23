@@ -5,7 +5,7 @@ Oppgave 2
 
 import java.util.Random;
 
-public class oppg4_2 {
+public class Oppg4_2 {
     public static void main(String[] args) {
 
         player player1 = new player("Spiller 1");

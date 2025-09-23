@@ -32,7 +32,7 @@ class Valuta {
 }
 
 // Klientprogram
-public class oppg4_1 {
+public class Oppg4_1 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
