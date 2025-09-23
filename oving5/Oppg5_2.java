@@ -18,16 +18,16 @@ public class Oppg5_2 {
                 return random.nextInt(ovre - nedre) + nedre;
             }
 
-            // public double nesteDesimaltall(double nedre, double ovre) {
-
-            // }
+            public double nesteDesimaltall(double nedre, double ovre) {
+                return random.nextDouble() * (ovre - nedre) + nedre;
+            }
         }
 
-        MinRandom kukrandom = new MinRandom();
+        MinRandom tilfeldig = new MinRandom();
 
-        kukrandom.nesteHeltall(1, 69);
+        System.out.println("Random tall = " + tilfeldig.nesteHeltall(1, 4));
+        System.out.println("Random tall = " + tilfeldig.nesteDesimaltall(1, 4));
 
-        System.out.println("Random tall = " + kukrandom.nesteHeltall(1, 4));
     }
 }
 

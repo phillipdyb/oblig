@@ -3,7 +3,7 @@
 Oppgave 1
  */
 
-public class Main {
+public class Oppg5_1 {
     public static void main(String[] args) {
 
 
