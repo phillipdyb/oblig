@@ -10,24 +10,23 @@ import java.util.Random;
 public class Oppg6_1 {
     public static void main(String[] args) {
 
-        class Random {
-            Java.util.Random random = new java.util.Random();
+        Random random = new Random();
+        int[] antall = new int[10]; // array for å telle forekomster
+        int count = 0;
 
-            int tall = random.nextInt(10);
-            int antall = new int(10);
-            int count = 0;
-
-
-            while (count < 1000) {
-                count += 1;
-
-                System.out.println(tall);
-            }
-
+        // Generer 1000 tilfeldige tall
+        while (count < 1000) {
+            int tall = random.nextInt(10); // generer nytt tall for hver iterasjon
+            antall[tall]++; // øk telleren for dette tallet
+            count++;
         }
 
+        // Skriv ut resultatene
+        System.out.println("Antall forekomster av hvert tall:");
+        for (int i = 0; i < antall.length; i++) {
+            System.out.println("Tall " + i + ": " + antall[i] + " ganger");
+        }
     }
-
 }
 
 /*
