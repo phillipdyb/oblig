@@ -7,11 +7,11 @@ package oving6;
 
 import java.util.Scanner;
 
-public class Oppg6_2 {
+class TextAnalysis {
 
     private int[] characterCount = new int[30];
 
-    public Oppg6_2(String text) {
+    public TextAnalysis(String text) {
         for (int i = 0; i < text.length(); i++) {
             char ch = Character.toLowerCase(text.charAt(i));
 
@@ -84,24 +84,25 @@ public class Oppg6_2 {
 }
 
 class Client {
-     static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) {
 
-        System.out.print("Skriv inn tekst: ");
-        String text = scanner.nextLine();
+            Scanner scanner = new Scanner(System.in);
 
-        Oppg6_2 analysis = new Oppg6_2(text);
+            System.out.print("Skriv inn tekst: ");
+            String text = scanner.nextLine();
 
-        System.out.println("\nForskjellige bokstaver: " + analysis.getNumberOfDifferentLetters());
-        System.out.println("Totalt antall bokstaver: " + analysis.getTotalLetters());
-        System.out.printf("Prosent ikke-bokstaver: %.1f%%\n", analysis.getPercentageNonLetters());
-        System.out.println("Mest brukt: " + analysis.getMostFrequentLetters());
+            TextAnalysis analysis = new TextAnalysis(text);
 
-        System.out.print("\nSjekk bokstav: ");
-        char letter = scanner.nextLine().charAt(0);
-        System.out.println("'" + letter + "' forekommer " + analysis.getOccurrences(letter) + " ganger");
+            System.out.println("\nForskjellige bokstaver: " + analysis.getNumberOfDifferentLetters());
+            System.out.println("Totalt antall bokstaver: " + analysis.getTotalLetters());
+            System.out.printf("Prosent ikke-bokstaver: %.1f%%\n", analysis.getPercentageNonLetters());
+            System.out.println("Mest brukt: " + analysis.getMostFrequentLetters());
 
-        scanner.close();
+            System.out.print("\nSjekk bokstav: ");
+            char letter = scanner.nextLine().charAt(0);
+            System.out.println("'" + letter + "' forekommer " + analysis.getOccurrences(letter) + " ganger");
+
+            scanner.close();
     }
 }
 
