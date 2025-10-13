@@ -5,8 +5,63 @@ Oppgave 1
 
 package oving7;
 
-public class Oppg7_1 {
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+
+class NyString {
+
+    String regex = "[,\\.\\s]";
+    String[] myArray;
     
+    // Constructor for First Letter in every word in the sentence
+    public NyString(String text) {
+        myArray = text.split(regex);
+    }
+
+    // Function to return the first letter of words in the "myArray"
+    public String firstLetter() {
+        String firstLetter = "";
+
+        for (String s : myArray) {
+            firstLetter += s.charAt(0);
+        }
+        return firstLetter;
+    }
+
+    // Function that removes certain letters from a sentence
+    public String removedLetters(char letter) {
+        List<String> newArray = new ArrayList<>();
+
+        for (String s : myArray) {
+            newArray.add(s.replace(String.valueOf(letter), ""));
+        }
+        return String.join(" ", newArray);
+    }
+}
+
+class Client{
+    static void main(String[] args) {
+
+        // Scanner
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Skriv en setning du vil forkorte: ");
+        String text = scanner.nextLine();
+
+        // Calling the constructor
+        NyString modified = new NyString(text);
+
+        // Print first letters for the sentence
+        System.out.print(modified.firstLetter());
+
+        // Remove and print the removed letters from the sentence
+        System.out.println("\nFjern en bokstav fra setningen: ");
+        char letter = scanner.nextLine().charAt(0);
+        System.out.println(modified.removedLetters(letter));
+
+        scanner.close();
+
+    }
 }
 
 /*
