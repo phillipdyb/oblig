@@ -8,9 +8,9 @@ import java.util.Scanner;
 
 public class Person {
 
-    private String firstName = firstName;
-    private String lastName = lastName;
-    private int birthYear = birthYear;
+    private String firstName;
+    private String lastName;
+    private int birthYear;
 
     // Attributter fornavn, etternavn og fødselsår
 
@@ -35,4 +35,25 @@ public class Person {
     public int getBirthYear() {
         return birthYear;
     }
+
+    // Set firstName
+    public String setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    // Set lastName
+    public String setLastName (String lastName) {
+        this.lastName = lastName;
+    }
+
+    // Set birthYear
+    public int setBirthYear (int birthYear) {
+        this.birthYear = birthYear;
+    }
+
+    // toString for print
+    public String toString() {
+        return lastName + ", " + firstName;
+    }
+
 }

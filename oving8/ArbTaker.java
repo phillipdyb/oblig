@@ -6,26 +6,29 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ArbTaker {
+public class ArbTaker extends Person {
 
-    int yearJoined = yearJoined;
-    double monthlySalary = monthlySalary;
-    double taxPercentage = taxPercentage;
+    // datatype Person
+    // int arbTakerNr;
+    // int yearJoined;
+    private double monthlySalary;
+    // double taxPercentage;
 
     // Attributter personalia (datatype Person), arbtakernr
     // ansettelsesår, månedslønn og skatteprosent.
 
     // Constructor
-    public ArbTaker(int yearJoined, double monthlySalary, double taxPercentage) {
-        this.yearJoined = yearJoined;
+    public ArbTaker(String firstName, String lastName, double monthlySalary) {
+        super(firstName, lastName);
+        // this.yearJoined = yearJoined;
         this.monthlySalary = monthlySalary;
-        this.taxPercentage = taxPercentage;
+        // this.taxPercentage = taxPercentage;
     }
 
     // Get yearJoined
-    public int getYearJoined() {
+    /* public int getYearJoined() {
         return yearJoined;
-    }
+    }*/
 
     // Get monthlySalary
     public double getMonthlySalary() {
@@ -33,25 +36,23 @@ public class ArbTaker {
     }
 
     // Get taxPercentage
-    public double getTaxPercentage() {
+    /* public double getTaxPercentage() {
         return taxPercentage;
-    }
+    } */
 
     // Get taxKroner
-    public double getTaxKroner() {
-        int taxKroner = (taxPercentage * monthlySalary);
-        return taxKroner;
-    }
+    /* public double getTaxKroner() {
+        return (taxPercentage * monthlySalary);
+    } */
 
     // Set monthlySalary
     public double setMonthlySalary() {
-        double monthlySalary = setMonthlySalary();
-        return monthlySalary;
+        this.monthlySalary = monthlySalary;
     }
 
     // Set taxPercentage
-    public double setTaxPercentage() {
+    /* public double setTaxPercentage() {
         double taxPercentage = setTaxPercentage();
         return taxPercentage;
-    }
+    } */
 }

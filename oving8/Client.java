@@ -15,8 +15,7 @@ public class Client {
     public static void main(String[] args) {
 
         // Konstruktørkalling
-        Person modified = new Person(firstName, lastName, birthYear);
-        ArbTaker modified = new ArbTaker(yearJoined, monthlySalary, taxPercentage)
+        ArbTaker mod2 = new ArbTaker(firstName, lastName, monthlySalary);
 
         // Scanner for menyvalg
         Scanner in = new Scanner(System.in);
@@ -41,7 +40,7 @@ public class Client {
             // Switch case for meny for å velge hva som printes ut
             switch (valg) {
                 case 1:
-                    System.out.println("\nInformasjon om arbeidstaker:\n" + get.ArbTaker() "\n" + get.ArbTaker);
+                    System.out.println("\nInformasjon om arbeidstaker:\n" + get.ArbTaker() + "\n" + get.ArbTaker);
                     break;
                 case 2:
                     System.out.println("\nx\n" + x());
