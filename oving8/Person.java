@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-class Person {
+public class Person {
 
     private String firstName = firstName;
     private String lastName = lastName;
