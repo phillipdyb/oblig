@@ -4,24 +4,27 @@ public class TestKlient {
 
     public static void main(String[] args) {
 
-        // Oppretter en student
-        Student s1 = new Student("Ole Hansen");
+        // Kaller konstruktøren
+        OppgaveOversikt oversikt = new OppgaveOversikt();
 
+        // Registrerer en student
+        oversikt.registrerStudent("Ole Hansen");
 
-        System.out.println("Ny student opprettet:");
-        System.out.println(s1);
+        // Print
+        System.out.println("Ny student registrert:");
+        System.out.println(oversikt);
 
-        // Øker antall oppgaver
-        s1.økAntOppg(3);
+        // Øker antall oppgaver via oversikten
+        oversikt.økOppgaver("Ole Hansen", 3);
         System.out.println("\nEtter å ha levert 3 oppgaver:");
-        System.out.println(s1);
+        System.out.println(oversikt);
 
-        s1.økAntOppg(2);
+        // Print antall studenter
+        System.out.println("Antall studenter: " + oversikt.getAntStud());
+
+        // Øker antall oppgaver igjen
+        oversikt.økOppgaver("Ole Hansen", 2);
         System.out.println("\nEtter å ha levert 2 oppgaver til:");
-        System.out.println(s1);
-
-        // Tester get-metodene
-        System.out.println("\nNavn: " + s1.getNavn());
-        System.out.println("Antall oppgaver: " + s1.getAntOppg());
+        System.out.println(oversikt);
     }
 }

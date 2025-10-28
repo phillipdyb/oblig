@@ -28,6 +28,7 @@ public class Student {
         }
     }
 
+    // Setter sammen navn og antall løste oppgaver
     @Override
     public String toString() {
         return navn + " har løst " + antOppg + " oppgaver";

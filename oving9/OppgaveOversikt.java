@@ -7,8 +7,8 @@ public class OppgaveOversikt {
     private int antStud = 0;
 
     // Konstruktør
-    public OppgaveOversikt(int kapasitet) {
-        studenter = new Student[kapasitet];
+    public OppgaveOversikt() {
+        studenter = new Student[10];
     }
 
     // Get antall studenter
@@ -52,7 +52,7 @@ public class OppgaveOversikt {
         return false;
     }
 
-    // d
+    // Returnerer antall studenter
     public String toString() {
         String resultat = "Antall studenter: " + antStud + "\n";
         for (int i = 0; i < antStud; i++) {
