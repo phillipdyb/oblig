@@ -1,4 +1,4 @@
-package oving10;
+package oving10.oppgave1;
 
 public class Arrangement {
 

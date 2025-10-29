@@ -1,4 +1,4 @@
-package oving10;
+package oving10.oppgave1;
 
 import java.util.Scanner;
 
@@ -42,9 +42,9 @@ public class Client {
                     String oldWord = in.nextLine();
                     System.out.print("Til dato: ");
                     String newWord = in.nextLine();
-                    mod1.eventsDateInterval(fraDato, tilDato);
+                    mod1.eventsDateInterval(fromDate, toDate);
                     System.out.println("Arrangementer på dato: \n");
-                    System.out.println("\n:\n" + mod1.eventsDateInterval(fraDato, tilDato));
+                    System.out.println("\n:\n" + mod1.eventsDateInterval(fromDatew, toDate));
                     break;
                 case 5:
                     System.out.println("\nSe alle arrangement::\n" + mod1.toString());
