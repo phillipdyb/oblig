@@ -1,38 +1,52 @@
-package oving10.oppgave1;
+package oppgave1;
+
+import java.util.ArrayList;
 
 public class ArrangementRegister {
 
-    private Arrangement[] events;
-    private double fromDate;
-    private double toDate;
+    private ArrayList<Arrangement> events;
 
-
-    // Register new events - Constructor
     public ArrangementRegister() {
-        events = new Arrangement[20];
+        events = new ArrayList<>();
     }
 
-    // Find all events in one location
-    public String findEventsLocation() {
-        return findEventsLocation();
+    public void registrerArrangement(Arrangement newEvent) {
+        events.add(newEvent);
     }
 
+//    private ArrayList<Arrangement> events;
 
-    // Find all events in one date
+//    // Register new events - Constructor
+//    public ArrangementRegister() {
+//        this.events = new ArrayList<>();
+//    }
 
 
-    // Find all events in a given date interval (to-from), sort on date
-    public String eventsDateInterval(double fromDate, double toDate) {
-        this.fromDate = fromDate;
-        this.toDate = toDate;
 
-        // for (int i;  (fromDate, toDate)); {
+//    public void registrerArrangement(String) {
+//        events.add(arrangement);
+//    }
 
-    }
 
-    // Make a list for all events, sorted after location, type and date
-    @Override
-    public String toString() {
-        return eventName + eventLocation + eventDate;
-    }
+
 }
+
+//    // Find all events in one location
+//    public String findEventsLocation() {
+//        return findEventsLocation();
+//    }
+//
+//
+//    // Find all events in one date
+//
+//
+//    // Find all events in a given date interval (to-from), sort on date
+//    public String eventsDateInterval(double fromDate, double toDate) {
+//        this.fromDate = fromDate;
+//        this.toDate = toDate;
+//
+//        // for (int i;  (fromDate, toDate)); {
+//
+//    }
+//
+//    // Make a list for all events, sorted after location, type and date

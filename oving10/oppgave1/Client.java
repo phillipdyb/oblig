@@ -1,63 +1,35 @@
-package oving10.oppgave1;
+package oppgave1;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Client {
-    static void main() {
+    public static void main(String[] args) {
 
         // Calling the constructor
         ArrangementRegister mod1 = new ArrangementRegister();
-        Arrangement mod2 = new Arrangement();
+        System.out.println("Arrangement registrert!");
 
-        // Menu thingy
-        Scanner in = new Scanner(System.in);
 
-        boolean fortsett = true;
+        // Register event
+        mod1.registrerArrangement("Festningen");
+        mod1.registrerArrangement("");
+        mod1.registrerArrangement();
 
-        while (fortsett) {
-            // Meny
-            System.out.println(
-                    "\nHva vil du gjøre?:\n" +
-                            "1: Registrere nytt arrangement\n" +
-                            "2: Finne arrangement på sted\n" +
-                            "3: Finne arrangement på dato\n" +
-                            "4: Finne arrangement innenfor tidsintervall\n" +
-                            "5: Se alle arrangementer\n" +
-                            "6: Avslutt program"
-            );
+        // Print event in a specific place
 
-            int valg = in.nextInt();
 
-            switch (valg) {
-                case 1:
-                    break;
-                case 2:
-                    System.out.println("\nArrangementer på " + +": \n");
-                    break;
-                case 3:
-                    System.out.println("\nArrangementer på " + dato + ": \n");
-                    break;
-                case 4:
-                    System.out.print("Fra dato: ");
-                    String oldWord = in.nextLine();
-                    System.out.print("Til dato: ");
-                    String newWord = in.nextLine();
-                    mod1.eventsDateInterval(fromDate, toDate);
-                    System.out.println("Arrangementer på dato: \n");
-                    System.out.println("\n:\n" + mod1.eventsDateInterval(fromDatew, toDate));
-                    break;
-                case 5:
-                    System.out.println("\nSe alle arrangement::\n" + mod1.toString());
-                    break;
-                case 6:
-                    fortsett = false;
-                    System.out.println("Avslutter...");
-                    continue;
-                default:
-                    System.out.println("Ugyldig valg, prøv igjen.");
-                    continue;
-            }
-        }
-        in.close();
+        // Print events on a specific date
+
+
+        // Print all events in a specific date range
+
+
+        // Print a list of all the arrangements, sorted on place, type and date
+
+
     }
 }
