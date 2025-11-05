@@ -9,6 +9,7 @@ public class TestKlient {
 
         // Registrerer en student
         oversikt.registrerStudent("Ole Hansen");
+        oversikt.registrerStudent("Mati Molnes");
 
         // Print
         System.out.println("Ny student registrert:");
@@ -16,6 +17,7 @@ public class TestKlient {
 
         // Øker antall oppgaver via oversikten
         oversikt.økOppgaver("Ole Hansen", 3);
+        oversikt.økOppgaver("Mati Molnes", 1);
         System.out.println("\nEtter å ha levert 3 oppgaver:");
         System.out.println(oversikt);
 
@@ -24,7 +26,8 @@ public class TestKlient {
 
         // Øker antall oppgaver igjen
         oversikt.økOppgaver("Ole Hansen", 2);
-        System.out.println("\nEtter å ha levert 2 oppgaver til:");
+        oversikt.økOppgaver("Mati Molnes", 1);
+        System.out.println("\nEtter å ha levert flere oppgaver:");
         System.out.println(oversikt);
     }
 }
