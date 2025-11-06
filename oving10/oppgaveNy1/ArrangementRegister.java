@@ -3,9 +3,10 @@ package oving10.oppgaveNy1;
 import java.util.ArrayList;
 import java.util.Comparator;
 
-class ArrangementRegister {
+public class ArrangementRegister {
     private ArrayList<Arrangement> arrangementer;
 
+    // Konstruktør
     public ArrangementRegister() {
         this.arrangementer = new ArrayList<>();
     }
@@ -78,6 +79,7 @@ class ArrangementRegister {
         return sortert;
     }
 
+    // Om arrayen er tom
     public boolean isEmpty() {
         return arrangementer.isEmpty();
     }

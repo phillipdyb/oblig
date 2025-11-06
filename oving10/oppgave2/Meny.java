@@ -6,19 +6,23 @@ public class Meny {
     private String navn;
     private ArrayList<Rett> retter;
 
+    // Konstruktør
     public Meny(String navn, ArrayList<Rett> retter) {
         this.navn = navn;
         this.retter = retter;
     }
 
+    // Get navn
     public String getNavn() {
         return navn;
     }
 
+    // Get retter
     public ArrayList<Rett> getRetter() {
         return retter;
     }
 
+    // Get hentTotalpris
     public double hentTotalpris() {
         double totalpris = 0;
         for (Rett rett : retter) {
@@ -27,6 +31,7 @@ public class Meny {
         return totalpris;
     }
 
+    // toString
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

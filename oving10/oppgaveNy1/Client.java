@@ -7,6 +7,7 @@ public class Client {
     private static ArrangementRegister register = new ArrangementRegister();
     private static Scanner scanner = new Scanner(System.in);
 
+    // Interaktiv meny
     public static void main(String[] args) {
         boolean running = true;
 
@@ -48,6 +49,7 @@ public class Client {
         scanner.close();
     }
 
+    // Viser menyvalg
     private static void visMenu() {
         System.out.println("1. Registrer nytt arrangement");
         System.out.println("2. Finn arrangementer på et sted");
@@ -59,6 +61,7 @@ public class Client {
         System.out.println("8. Avslutt");
     }
 
+    // Registrerer arrangement
     private static void registrerNyttArrangement() {
         System.out.println("\nRegistrer nytt arrangement");
 
@@ -82,6 +85,7 @@ public class Client {
         register.registrerArrangement(nyttArrangement);
     }
 
+    // Finner arrangement på sted
     private static void finnArrangementerPaSted() {
         System.out.print("\nOppgi sted: ");
         String sted = scanner.nextLine();
@@ -90,6 +94,7 @@ public class Client {
         visResultat(resultat, "Arrangementer på " + sted);
     }
 
+    // Finner arrangement på dato
     private static void finnArrangementerPaDato() {
         System.out.print("\nOppgi dato (format: yyyyMMdd, eks: 20251105): ");
         long dato = scanner.nextLong();
@@ -99,6 +104,7 @@ public class Client {
         visResultat(resultat, "Arrangementer på dato " + dato);
     }
 
+    // Finner arrangement i tidsintervall
     private static void finnArrangementerIIntervall() {
         System.out.print("\nFra dato (format: yyyyMMddhhmm): ");
         long fraDato = scanner.nextLong();
@@ -111,21 +117,25 @@ public class Client {
         visResultat(resultat, "Arrangementer i intervallet (sortert på tid)");
     }
 
+    // Liste sortert på sted
     private static void visListeSortertPaSted() {
         ArrayList<Arrangement> resultat = register.listeEtterSted();
         visResultat(resultat, "Alle arrangementer sortert på sted");
     }
 
+    // Liste sortert på type arrangement
     private static void visListeSortertPaType() {
         ArrayList<Arrangement> resultat = register.listeEtterType();
         visResultat(resultat, "Alle arrangementer sortert på type");
     }
 
+    // Liste sortert på tidspunkt
     private static void visListeSortertPaTidspunkt() {
         ArrayList<Arrangement> resultat = register.listeEtterTidspunkt();
         visResultat(resultat, "Alle arrangementer sortert på tidspunkt");
     }
 
+    // Viser antall arrangementer
     private static void visResultat(ArrayList<Arrangement> arrangementer, String tittel) {
         System.out.println("\n" + tittel + ":");
 
@@ -139,6 +149,7 @@ public class Client {
         }
     }
 
+    // Returnerer feil om man velger noe utenfor valgene i menyen
     private static int lesInt(String prompt) {
         System.out.print(prompt);
         while (!scanner.hasNextInt()) {
