@@ -81,6 +81,23 @@ public class PropertyUI {
         }
     }
 
+    // Finds property on Municipality, Lot and Section number
+    private void findProperty() {
+        System.out.println("\nFind a property based on Municipality, Lot and Section Number");
+
+        System.out.print("Municipality Number: ");
+        int municipalityNumber = scanner.nextInt();
+
+        System.out.print("Lot Number: ");
+        int lotNumber = scanner.nextInt();
+
+        System.out.print("Section Number: ");
+        int sectionNumber = scanner.nextInt();
+
+        ArrayList<Property> results = register.findProperty(municipalityNumber, lotNumber, sectionNumber);
+        System.out.println(results);
+    }
+
     public void start () {
         boolean finished = false;
         // The while-loop will run as long as the user has not selected
@@ -95,7 +112,7 @@ public class PropertyUI {
                     listAllProperties();
                     break;
                 case FIND_PROPERTY:
-                    //TODO: Fill inn your code here....
+                    findProperty();
                     break;
                 case CALCULATE_AVERAGE_AREA:
                     //TODO: Fill inn your code here....
