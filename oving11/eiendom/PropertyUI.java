@@ -1,5 +1,7 @@
 package eiendom;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class PropertyUI {
@@ -8,6 +10,9 @@ public class PropertyUI {
         ui.start();
     }
 
+    private static PropertyRegister register = new PropertyRegister();
+    private final Scanner scanner = new Scanner(System.in);
+
     // Constants representing the different menu choices
     private final int ADD_PROPERTY = 1;
     private final int LIST_ALL_PROPERTIES = 2;
@@ -15,8 +20,7 @@ public class PropertyUI {
     private final int CALCULATE_AVERAGE_AREA = 4;
     private final int EXIT = 5;
 
-    private int showMenu ()
-    {
+    private int showMenu () {
         int menuChoice = 0;
         System.out.println("\n***** Property Register Application v0.1 *****\n");
         System.out.println("1. Add property");
@@ -24,14 +28,57 @@ public class PropertyUI {
         System.out.println("3. Search property");
         System.out.println("4. Calculate average area");
         System.out.println("5. Quit");
-        System.out.println("\nPlease enter a number between 1 and 9.\n");
-        Scanner sc = new Scanner(System.in);
-        if (sc.hasNextInt()) {
-            menuChoice = sc.nextInt();
+        System.out.println("\nPlease enter a number between 1 and 5.\n");
+
+        if (scanner.hasNextInt()) {
+            menuChoice = scanner.nextInt();
         } else {
             System.out.println("You must enter a number, not text");
         }
+        scanner.nextLine(); // Consumes newline
         return menuChoice;
+    }
+
+    // Register property
+    private void registerNewProperty() {
+        System.out.println("\nRegister a new property");
+
+        System.out.print("Name of property: ");
+        String name = scanner.nextLine();
+
+        System.out.print("Name of owner: ");
+        String nameOfOwner = scanner.nextLine();
+
+        System.out.print("Municipality name: ");
+        String municipalityName = scanner.nextLine();
+
+        System.out.print("Municipality number: ");
+        int municipalityNumber = scanner.nextInt();
+
+        System.out.print("Lot number: ");
+        int lotNumber = scanner.nextInt();
+
+        System.out.print("Section number: ");
+        int sectionNumber = scanner.nextInt();
+
+        scanner.nextLine(); // Konsumer newline
+
+        Property p = new Property(name, nameOfOwner, municipalityName, municipalityNumber, lotNumber, sectionNumber);
+        register.registerProperty(p);
+        System.out.println("Property is registered.");
+    }
+
+    private void listAllProperties() {
+        System.out.println("\nAll properties:");
+        List<Property> results = register.allProperties();
+        if (results.isEmpty()) {
+            System.out.println("No properties found.");
+        } else {
+            for (Property p : results) {
+                System.out.println(p);
+            }
+            System.out.println("\nTotal properties: " + results.size());
+        }
     }
 
     public void start () {
@@ -42,10 +89,10 @@ public class PropertyUI {
             int menuChoice = this.showMenu();
             switch (menuChoice) {
                 case ADD_PROPERTY:
-                    //TODO: Fill inn your code here....
+                    registerNewProperty();
                     break;
                 case LIST_ALL_PROPERTIES:
-                    //TODO: Fill inn your code here....
+                    listAllProperties();
                     break;
                 case FIND_PROPERTY:
                     //TODO: Fill inn your code here....

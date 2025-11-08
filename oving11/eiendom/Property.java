@@ -5,21 +5,21 @@ public class Property {
     // Variables
     private String name;
     private String nameOfOwner;
-    private int municipalityName;
+    private String municipalityName;
     private int municipalityNumber;
     private int lotNumber;
     private int sectionNumber;
     private int area;
 
     // Contructor
-    public Property(String name, String nameOfOwner, int municipalityName, int municipalityNumber, int lotNumber, int sectionNumber, int area) {
+    public Property(String name, String nameOfOwner, String municipalityName,
+                    int municipalityNumber, int lotNumber, int sectionNumber) {
         this.name = name;
         this.nameOfOwner = nameOfOwner;
         this.municipalityName = municipalityName;
         this.municipalityNumber = municipalityNumber;
         this.lotNumber = lotNumber;
         this.sectionNumber = sectionNumber;
-        this.area = area;
     }
 
     // Get name
@@ -33,7 +33,7 @@ public class Property {
     }
 
     // Get municipalityName
-    public int getMunicipalityName() {
+    public String getMunicipalityName() {
         return municipalityName;
     }
 
@@ -60,8 +60,7 @@ public class Property {
     // toString (Return kommunenr-gnr/bnr (t.d. "1445"-"54"/"73"))
     @Override
     public String toString() {
-        return String.format("Kommunenr-gnr/bnr",
-                municipalityNumber, "-", lotNumber, "/", sectionNumber);
+        return String.format("%d-%d/%d", municipalityNumber, lotNumber, sectionNumber);
     }
 
 }
