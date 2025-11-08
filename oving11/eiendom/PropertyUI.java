@@ -13,7 +13,7 @@ public class PropertyUI {
     private final int LIST_ALL_PROPERTIES = 2;
     private final int FIND_PROPERTY = 3;
     private final int CALCULATE_AVERAGE_AREA = 4;
-    private final int EXIT = 9;
+    private final int EXIT = 5;
 
     private int showMenu ()
     {
@@ -23,9 +23,7 @@ public class PropertyUI {
         System.out.println("2. List all properties");
         System.out.println("3. Search property");
         System.out.println("4. Calculate average area");
-        System.out.println("5. Calculate average area");
-        // TODO: Add more menus
-        System.out.println("9. Quit");
+        System.out.println("5. Quit");
         System.out.println("\nPlease enter a number between 1 and 9.\n");
         Scanner sc = new Scanner(System.in);
         if (sc.hasNextInt()) {
