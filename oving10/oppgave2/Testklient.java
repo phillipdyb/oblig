@@ -16,17 +16,18 @@ public class Testklient {
         Rett dessert1 = new Rett("Sjokoladekake", "dessert", 95.0, "Bland ingredienser, stek kaken");
         Rett dessert2 = new Rett("Pannacotta", "dessert", 85.0, "Kok fløte og sukker, la stivne");
 
+        // Kaller til klassen registrerRett
         register.registrerRett(forrett1);
         register.registrerRett(forrett2);
         register.registrerRett(hovedrett1);
         register.registrerRett(hovedrett2);
         register.registrerRett(dessert1);
         register.registrerRett(dessert2);
-        System.out.println("6 retter registrert!\n");
+        System.out.println("Retter registrert\n");
 
         // Finn en rett
         System.out.println("Finn rett");
-        Rett funnetRett = register.finnRett("Laks med grønnsaker");
+        Rett funnetRett = register.finnRett("Biff med potetmos");
         System.out.println("Funnet: " + funnetRett);
         System.out.println("Oppskrift: " + funnetRett.getOppskrift() + "\n");
 

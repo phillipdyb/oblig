@@ -31,8 +31,7 @@ public class ArrangementRegister {
     // Finn alle arrangementer på en gitt dato
     public ArrayList<Arrangement> finnArrangementerPaDato(long dato) {
         ArrayList<Arrangement> resultat = new ArrayList<>();
-        long datoDel = dato / 10000; // Fjern klokkeslett, behold kun dato
-
+        long datoDel = dato / 10000; // Sletter klokkeslett og beholder dato
         for (Arrangement a : arrangementer) {
             long arrangementDato = a.getTidspunkt() / 10000;
             if (arrangementDato == datoDel) {
@@ -77,10 +76,5 @@ public class ArrangementRegister {
         ArrayList<Arrangement> sortert = new ArrayList<>(arrangementer);
         sortert.sort(Comparator.comparingLong(Arrangement::getTidspunkt));
         return sortert;
-    }
-
-    // Om arrayen er tom
-    public boolean isEmpty() {
-        return arrangementer.isEmpty();
     }
 }

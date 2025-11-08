@@ -39,7 +39,7 @@ public class Client {
                     break;
                 case 8:
                     running = false;
-                    System.out.println("Avslutter programmet. Ha en fin dag!");
+                    System.out.println("Avslutter...");
                     break;
                 default:
                     System.out.println("Ugyldig valg. Prøv igjen.");
