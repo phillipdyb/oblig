@@ -61,15 +61,18 @@ public class PropertyUI {
         System.out.print("Section number: ");
         int sectionNumber = scanner.nextInt();
 
+        System.out.print("Size of area in m2: ");
+        double area = scanner.nextInt();
+
         scanner.nextLine(); // Konsumer newline
 
-        Property p = new Property(name, nameOfOwner, municipalityName, municipalityNumber, lotNumber, sectionNumber);
+        Property p = new Property(name, nameOfOwner, municipalityName, municipalityNumber, lotNumber, sectionNumber, area);
         register.registerProperty(p);
         System.out.println("Property is registered.");
     }
 
     private void listAllProperties() {
-        System.out.println("\nAll properties:");
+        System.out.println("\nAll properties:\n");
         List<Property> results = register.allProperties();
         if (results.isEmpty()) {
             System.out.println("No properties found.");
@@ -79,6 +82,11 @@ public class PropertyUI {
             }
             System.out.println("\nTotal properties: " + results.size());
         }
+    }
+
+    private void averageAreaSize() {
+        double average = register.averageAreaSize();
+        System.out.printf("Average size of a property: %.2f m²%n", average);
     }
 
     // Finds property on Municipality, Lot and Section number
@@ -115,7 +123,7 @@ public class PropertyUI {
                     findProperty();
                     break;
                 case CALCULATE_AVERAGE_AREA:
-                    //TODO: Fill inn your code here....
+                    averageAreaSize();
                     break;
                 case EXIT:
                     System.out.println("Thank you for using the Properties app!\n");

@@ -20,13 +20,23 @@ public class PropertyRegister {
         return new ArrayList<>(properties);
     }
 
-    public ArrayList<Property> findProperty(int municipalityName, int lotNumber, int sectionNumber) {
+    // Find property with Municipality, Lot and Section number
+    public ArrayList<Property> findProperty(int municipalityNumber, int lotNumber, int sectionNumber) {
         ArrayList<Property> results = new ArrayList<>();
         for (Property p : properties) {
-            if (p.getMunicipalityNumber() == municipalityName && p.getLotNumber() == lotNumber && p.getSectionNumber() == sectionNumber) {
+            if (p.getMunicipalityNumber() == municipalityNumber && p.getLotNumber() == lotNumber && p.getSectionNumber() == sectionNumber) {
                 results.add(p);
             }
         }
         return results;
+    }
+
+    // Find average size of the property in m2
+    public double averageAreaSize() {
+        double sum = 0;
+        for (Property p : properties) {
+            sum += p.getArea();
+        }
+        return sum / properties.size();
     }
 }

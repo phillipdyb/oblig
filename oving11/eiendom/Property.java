@@ -9,17 +9,18 @@ public class Property {
     private int municipalityNumber;
     private int lotNumber;
     private int sectionNumber;
-    private int area;
+    private double area;
 
     // Contructor
     public Property(String name, String nameOfOwner, String municipalityName,
-                    int municipalityNumber, int lotNumber, int sectionNumber) {
+                    int municipalityNumber, int lotNumber, int sectionNumber, double area) {
         this.name = name;
         this.nameOfOwner = nameOfOwner;
         this.municipalityName = municipalityName;
         this.municipalityNumber = municipalityNumber;
         this.lotNumber = lotNumber;
         this.sectionNumber = sectionNumber;
+        this.area = area;
     }
 
     // Get name
@@ -53,14 +54,28 @@ public class Property {
     }
 
     // Get area
-    public int getArea() {
+    public double getArea() {
         return area;
     }
 
     // toString (Return kommunenr-gnr/bnr (t.d. "1445"-"54"/"73"))
     @Override
     public String toString() {
-        return String.format("%d-%d/%d", municipalityNumber, lotNumber, sectionNumber);
+        return String.format(
+                "Name: %s%n" +
+                "Name of owner: %s%n" +
+                "Municipality Name: %s%n" +
+                "Municipality Number: %s%n" +
+                "Lot Number: %s%n" +
+                "Section Number: %d%n" +
+                "Area: %f%n",
+                name,
+                nameOfOwner,
+                municipalityName,
+                municipalityNumber,
+                lotNumber,
+                sectionNumber,
+                area);
     }
 
 }
