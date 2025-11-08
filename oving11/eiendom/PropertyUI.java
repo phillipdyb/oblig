@@ -84,11 +84,6 @@ public class PropertyUI {
         }
     }
 
-    private void averageAreaSize() {
-        double average = register.averageAreaSize();
-        System.out.printf("Average size of a property: %.2f m²%n", average);
-    }
-
     // Finds property on Municipality, Lot and Section number
     private void findProperty() {
         System.out.println("\nFind a property based on Municipality, Lot and Section Number");
@@ -103,7 +98,26 @@ public class PropertyUI {
         int sectionNumber = scanner.nextInt();
 
         ArrayList<Property> results = register.findProperty(municipalityNumber, lotNumber, sectionNumber);
-        System.out.println(results);
+        printFoundProperties(results);
+    }
+
+    private void printFoundProperties(ArrayList<Property> list) {
+        if (list.isEmpty()) {
+            System.out.println("No properties found.");
+            return;
+        }
+
+        System.out.println("\n--- Matching Properties ---");
+
+        for (Property p : list) {
+            System.out.println(p);   // Prints using Property.toString()
+            System.out.println();    // Blank line between entries
+        }
+    }
+
+    private void averageAreaSize() {
+        double average = register.averageAreaSize();
+        System.out.printf("Average size of a property: %.2f m²%n", average);
     }
 
     public void start () {
