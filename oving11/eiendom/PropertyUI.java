@@ -39,6 +39,36 @@ public class PropertyUI {
         return menuChoice;
     }
 
+    public void start () {
+        boolean finished = false;
+        // The while-loop will run as long as the user has not selected
+        // to quit the application
+        while (!finished) {
+            int menuChoice = this.showMenu();
+            switch (menuChoice) {
+                case ADD_PROPERTY:
+                    registerNewProperty();
+                    break;
+                case LIST_ALL_PROPERTIES:
+                    listAllProperties();
+                    break;
+                case FIND_PROPERTY:
+                    findProperty();
+                    break;
+                case CALCULATE_AVERAGE_AREA:
+                    averageAreaSize();
+                    break;
+                case EXIT:
+                    System.out.println("Thank you for using the Properties app!\n");
+                    finished = true;
+                    break;
+                default:
+                    System.out.println("Unrecognized menu selected..");
+                    break;
+            }
+        }
+    }
+
     // Register property
     private void registerNewProperty() {
         System.out.println("\nRegister a new property");
@@ -118,36 +148,6 @@ public class PropertyUI {
     private void averageAreaSize() {
         double average = register.averageAreaSize();
         System.out.printf("Average size of a property: %.2f m²%n", average);
-    }
-
-    public void start () {
-        boolean finished = false;
-        // The while-loop will run as long as the user has not selected
-        // to quit the application
-        while (!finished) {
-            int menuChoice = this.showMenu();
-            switch (menuChoice) {
-                case ADD_PROPERTY:
-                    registerNewProperty();
-                    break;
-                case LIST_ALL_PROPERTIES:
-                    listAllProperties();
-                    break;
-                case FIND_PROPERTY:
-                    findProperty();
-                    break;
-                case CALCULATE_AVERAGE_AREA:
-                    averageAreaSize();
-                    break;
-                case EXIT:
-                    System.out.println("Thank you for using the Properties app!\n");
-                    finished = true;
-                    break;
-                default:
-                    System.out.println("Unrecognized menu selected..");
-                    break;
-            }
-        }
     }
 }
 
