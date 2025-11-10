@@ -20,6 +20,7 @@ public class PropertyUI {
     private final int CALCULATE_AVERAGE_AREA = 4;
     private final int EXIT = 5;
 
+    // Menu
     private int showMenu () {
         int menuChoice = 0;
         System.out.println("\n***** Property Register Application v0.1 *****\n");
@@ -39,6 +40,7 @@ public class PropertyUI {
         return menuChoice;
     }
 
+    // Menu
     public void start () {
         boolean finished = false;
         // The while-loop will run as long as the user has not selected
