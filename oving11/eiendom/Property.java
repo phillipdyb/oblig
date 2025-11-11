@@ -72,7 +72,7 @@ public class Property {
                 "Name of owner: %s%n" +
                 "Municipality Name: %s%n" +
                 "Kommunenr-gnr/brn: %s-%s/%s%n" +
-                "Area: %f m² %n",
+                "Area: %.1f m² %n",
                 name,
                 nameOfOwner,
                 municipalityName,

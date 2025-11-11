@@ -102,7 +102,7 @@ public class PropertyUI {
         int sectionNumber = scanner.nextInt();
 
         System.out.print("Size of area in m2: ");
-        double area = scanner.nextInt();
+        double area = scanner.nextDouble();
 
         scanner.nextLine(); // Consume newline
 
