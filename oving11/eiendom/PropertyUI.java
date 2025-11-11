@@ -16,9 +16,11 @@ public class PropertyUI {
     // Constants representing the different menu choices
     private final int ADD_PROPERTY = 1;
     private final int LIST_ALL_PROPERTIES = 2;
-    private final int FIND_PROPERTY = 3;
-    private final int CALCULATE_AVERAGE_AREA = 4;
-    private final int EXIT = 5;
+    private final int DELETE_PROPERTY = 3;
+    private final int FIND_PROPERTY = 4;
+    private final int FIND_PROPERTY_LOT_NUMBER = 5;
+    private final int CALCULATE_AVERAGE_AREA = 6;
+    private final int EXIT = 7;
 
     // Menu
     private int showMenu () {
@@ -26,10 +28,12 @@ public class PropertyUI {
         System.out.println("\n***** Property Register Application v0.1 *****\n");
         System.out.println("1. Add property");
         System.out.println("2. List all properties");
-        System.out.println("3. Search property");
-        System.out.println("4. Calculate average area");
-        System.out.println("5. Quit");
-        System.out.println("\nPlease enter a number between 1 and 5.\n");
+        System.out.println("3. Delete property");
+        System.out.println("4. Search property on Municipality, Lot and Section Number");
+        System.out.println("5. Search property only on Lot Number");
+        System.out.println("6. Calculate average area");
+        System.out.println("7. Quit");
+        System.out.println("\nPlease enter a number between 1 and 6.\n");
 
         if (scanner.hasNextInt()) {
             menuChoice = scanner.nextInt();
@@ -43,8 +47,6 @@ public class PropertyUI {
     // Menu
     public void start () {
         boolean finished = false;
-        // The while-loop will run as long as the user has not selected
-        // to quit the application
         while (!finished) {
             int menuChoice = this.showMenu();
             switch (menuChoice) {
@@ -54,8 +56,14 @@ public class PropertyUI {
                 case LIST_ALL_PROPERTIES:
                     listAllProperties();
                     break;
+                case DELETE_PROPERTY:
+                    deleteProperty();
+                    break;
                 case FIND_PROPERTY:
                     findProperty();
+                    break;
+                case FIND_PROPERTY_LOT_NUMBER:
+                    findPropertyLotNumber();
                     break;
                 case CALCULATE_AVERAGE_AREA:
                     averageAreaSize();
@@ -96,13 +104,15 @@ public class PropertyUI {
         System.out.print("Size of area in m2: ");
         double area = scanner.nextInt();
 
-        scanner.nextLine(); // Konsumer newline
+        scanner.nextLine(); // Consume newline
 
         Property p = new Property(name, nameOfOwner, municipalityName, municipalityNumber, lotNumber, sectionNumber, area);
         register.registerProperty(p);
         System.out.println("Property is registered.");
     }
 
+    // Oppgave 3a)
+    // List all properties
     private void listAllProperties() {
         System.out.println("\nAll properties:\n");
         List<Property> results = register.allProperties();
@@ -116,6 +126,31 @@ public class PropertyUI {
         }
     }
 
+    // Delete property
+    private void deleteProperty() {
+        System.out.println("\nDelete a property");
+
+        System.out.print("Municipality number: ");
+        int municipalityNumber = scanner.nextInt();
+
+        System.out.print("Lot number: ");
+        int lotNumber = scanner.nextInt();
+
+        System.out.print("Section number: ");
+        int sectionNumber = scanner.nextInt();
+
+        scanner.nextLine(); // consume leftover newline
+
+        boolean deleted = register.deleteProperty(municipalityNumber, lotNumber, sectionNumber);
+
+        if (deleted) {
+            System.out.println("Property deleted successfully.");
+        } else {
+            System.out.println("No matching property found.");
+        }
+    }
+
+    // Oppgave 3a)
     // Finds property on Municipality, Lot and Section number
     private void findProperty() {
         System.out.println("\nFind a property based on Municipality, Lot and Section Number");
@@ -130,16 +165,29 @@ public class PropertyUI {
         int sectionNumber = scanner.nextInt();
 
         ArrayList<Property> results = register.findProperty(municipalityNumber, lotNumber, sectionNumber);
-        printFoundProperties(results);
+        printFoundProperties(results); // Calls the function printFoundProperties with the results
     }
 
+    // Oppgave 3c)
+    // Finds property on Lot Number
+    private void findPropertyLotNumber() {
+        System.out.println("\nFind a property based on Lot Number");
+
+        System.out.print("Lot Number: ");
+        int lotNumber = scanner.nextInt();
+
+        ArrayList<Property> results = register.findPropertyLotNumber(lotNumber);
+        printFoundProperties(results); // Calls the function printFoundProperties with the results
+    }
+
+    // Finds property on Municipality, Lot and Section number
     private void printFoundProperties(ArrayList<Property> list) {
         if (list.isEmpty()) {
             System.out.println("No properties found.");
             return;
         }
 
-        System.out.println("\n--- Matching Properties ---");
+        System.out.println("\nMatching Properties");
 
         for (Property p : list) {
             System.out.println(p);   // Prints using Property.toString()
@@ -147,6 +195,8 @@ public class PropertyUI {
         }
     }
 
+    // Oppgave 3b)
+    // Finds average area size
     private void averageAreaSize() {
         double average = register.averageAreaSize();
         System.out.printf("Average size of a property: %.2f m²%n", average);

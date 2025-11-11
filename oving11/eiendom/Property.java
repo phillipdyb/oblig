@@ -58,17 +58,21 @@ public class Property {
         return area;
     }
 
-    // toString (Return kommunenr-gnr/bnr (t.d. "1445"-"54"/"73"))
+    // Oppgave 2b)
+    // Return kommunenr-gnr/bnr (t.d. "1445"-"54"/"73")
+    public String getPropertyID() {
+        return String.format("%d-%d/%d", municipalityNumber, lotNumber, sectionNumber);
+    }
+
+    // toString
     @Override
     public String toString() {
         return String.format(
                 "Name: %s%n" +
                 "Name of owner: %s%n" +
                 "Municipality Name: %s%n" +
-                "Municipality Number: %s%n" +
-                "Lot Number: %s%n" +
-                "Section Number: %d%n" +
-                "Area: %f%n",
+                "Kommunenr-gnr/brn: %s-%s/%s%n" +
+                "Area: %f m² %n",
                 name,
                 nameOfOwner,
                 municipalityName,
@@ -78,4 +82,23 @@ public class Property {
                 area);
     }
 
+//    // toString
+//    @Override
+//    public String toString() {
+//        return String.format(
+//                "Name: %s%n" +
+//                "Name of owner: %s%n" +
+//                "Municipality Name: %s%n" +
+//                "Municipality Number: %s%n" +
+//                "Lot Number: %s%n" +
+//                "Section Number: %d%n" +
+//                "Area: %f%n",
+//                name,
+//                nameOfOwner,
+//                municipalityName,
+//                municipalityNumber,
+//                lotNumber,
+//                sectionNumber,
+//                area);
+//    }
 }
